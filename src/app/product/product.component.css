@@ -19,3 +19,36 @@ label{
  option{
     font-size: 12px;
 }
+
+
+/* Styling for the product card */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  
+  .list-group-item {
+    padding: 10px;
+  }
+  
+  h5 {
+    font-size: 15px;
+    color: #d40303;
+    margin-bottom: 10px;
+  }
+  
+  table {
+    width: 50%;
+    margin-top: 10px;
+  }
+  
+  td {
+    font-weight: bold;
+  }
+  
+  /* Additional styles you can customize */
+  

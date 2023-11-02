@@ -1,10 +1,11 @@
+
 <div>
     <div class="row">
         <div class="container">
             <div class="col-lg-12">
                 <div class="col-md-12">
                     <div>
-                        <h4>products</h4> <span>
+                        <span>
                             <div class="button">
                                 <div class="btn">
                                     <button type="button" class="btn btn-primary" data-toggle="modal"
@@ -17,6 +18,7 @@
                     <div class="card">
                         <div>
                             <div class="button">
+                                <h3 style="margin-left: 30px;">Products List</h3>
                                 <div class="btn">
                                     <button type="button" class="btn btn-primary" data-toggle="modal"
                                         data-target="#exampleModal" class="btn btn-success">Add New</button>
@@ -24,14 +26,13 @@
                             </div>
                         </div>
                         <section *ngIf="CardSection">
-                            <h3>Products List</h3>
-                            <div class="container" *ngFor="let list of ProductList">
-                                <div class="card mb-3">
+                            <div class="container">
+                                <div class="card main mb-3" *ngFor="let list of ProductList">
                                     <ul class="list-group">
                                         <li class="list-group-item">
                                             <div class="row">
                                                 <div class="col-10">
-                                                    <h5 class="mb-1"> Name Of Book : {{list.name}}</h5>
+                                                    <h5 class="mb-1">Name Of Book: {{list.name}}</h5>
                                                     <table>
                                                         <tbody>
                                                             <tr>
@@ -63,6 +64,9 @@
                                     </ul>
                                 </div>
                             </div>
+
+
+
                         </section>
                     </div>
                 </div>
@@ -177,8 +181,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
