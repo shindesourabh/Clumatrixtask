@@ -30,6 +30,7 @@ export class ProductComponent implements OnInit {
   packageId: any;
   SubCategoryId: any;
   superSubCategoryId: any;
+  CategoryId: any;
 
   constructor( private getproduct : ProductService, private router : Router, private  authService : AuthService) { }
 
@@ -63,14 +64,14 @@ export class ProductComponent implements OnInit {
     .subscribe(
       data => {
         this.dataSource = data;
-      this.getCategory_Id = this.dataSource.id;
-      localStorage.setItem('categoryId', this.getCategory_Id)
-        console.log(this.getCategory_Id);
-      },
-      error => {
-      }
-    );
-  }
+        if (data && data.pro_category && data.pro_category.length > 0) {
+          const pro_category = data.pro_category[0];
+          this.CategoryId = pro_category.id;
+          localStorage.setItem('categoryId',this.CategoryId)
+          console.log(JSON.stringify(this.CategoryId));
+        }
+  })
+}
  
   submitProduct(){debugger
   const newProduct = this.addProductform.value;

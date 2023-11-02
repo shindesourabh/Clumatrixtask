@@ -11,7 +11,7 @@ export class ProductService {
     // https://jsonplaceholder.typicode.com/todos/1
   }
   category(){
-    return this.http.get<any>(`https://jsonplaceholder.typicode.com/todos/1`)
+    return this.http.get<any>(`https://bookmystore.co/api/pro_category?ad=1`)
         .pipe(
             map((response) => {
                 return response;
