@@ -1,0 +1,21 @@
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn {
+    flex-grow: 1;
+    text-align: right;
+}
+tr td {
+    font-size: 12px;
+}
+.form-control, .form-select {
+    height: 30px;
+}
+label{
+    font-size: 12px;
+}
+ option{
+    font-size: 12px;
+}

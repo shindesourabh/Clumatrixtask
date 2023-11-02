@@ -1,0 +1,184 @@
+<div>
+    <div class="row">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="col-md-12">
+                    <div>
+                        <h4>products</h4> <span>
+                            <div class="button">
+                                <div class="btn">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal" class="btn btn-dark"
+                                        (click)="logout()">LOGOUT</button>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="button">
+                                <div class="btn">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal" class="btn btn-success">Add New</button>
+                                </div>
+                            </div>
+                        </div>
+                        <section *ngIf="CardSection">
+                            <h3>Products List</h3>
+                            <div class="container" *ngFor="let list of ProductList">
+                                <div class="card mb-3">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-10">
+                                                    <h5 class="mb-1"> Name Of Book : {{list.name}}</h5>
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>ID</td>
+                                                                <td><b>: {{list.id}}</b></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Created At</td>
+                                                                <td><b>: {{list.created_at | date}}</b></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Updated At</td>
+                                                                <td><b>: {{list.updated_at | date}}</b></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Discount Percentage</td>
+                                                                <td><b>: {{list.discount_percentage}}</b></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Marketing Commission Percentage</td>
+                                                                <td><b>: {{list.marketing_commission_percentage}}</b>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">Add Product</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="addProductform">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-4">
+                                    <label for="inputPassword6" class="col-form-label">Name</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="inputPassword6" formControlName="name" class="form-control"
+                                        aria-describedby="passwordHelpInline">
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-4">
+                                    <label for="inputPassword6" class="col-form-label">Commodity Type</label>
+                                </div>
+                                <div class="col-8">
+                                    <select class="form-select" id="role" aria-label=""
+                                        formControlName="commodity_type_id">
+                                        <option value="" disabled selected></option>
+                                        <option value="{{Commodity_Id}}">Option 1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-4">
+                                    <label for="inputPassword6" class="col-form-label">Caytegor</label>
+                                </div>
+                                <div class="col-8">
+                                    <select class="form-select" id="role" aria-label="" formControlName="category_id">
+                                        <option value="" disabled selected></option>
+                                        <option value="{{getCategory_Id}}">Option 1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-4">
+                                    <label for="inputPassword6" class="col-form-label">Super Sub Caytegor </label>
+                                </div>
+                                <div class="col-8">
+                                    <select class="form-select" id="role" aria-label=""
+                                        formControlName="sup_sub_category_id">
+                                        <option value="" disabled selected></option>
+                                        <option value="{{superSubCategoryId}}">Option 1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-4">
+                                    <label for="inputPassword6" class="col-form-label">Sub Caytegory </label>
+                                </div>
+                                <div class="col-8">
+                                    <select class="form-select" id="role" aria-label=""
+                                        formControlName="sub_category_id">
+                                        <option value="" disabled selected></option>
+                                        <option value="{{SubCategoryId}}">Option 1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-4">
+                                    <label for="inputPassword6" class="col-form-label"> Package Id</label>
+                                </div>
+                                <div class="col-8">
+                                    <select class="form-select" id="role" aria-label="" formControlName="package_id">
+                                        <option value="" disabled selected></option>
+                                        <option value="{{packageId}}">Option 1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-4">
+                                    <label for="inputPassword6" class="col-form-label"> Discription</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="inputPassword6" formControlName="description"
+                                        class="form-control" aria-describedby="passwordHelpInline">
+                                </div>
+                            </div>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-4">
+                                    <label for="inputPassword6" class="col-form-label"> long Discription </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" id="inputPassword6" formControlName="long_description"
+                                        class="form-control" aria-describedby="passwordHelpInline">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" (click)="submitProduct()">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
